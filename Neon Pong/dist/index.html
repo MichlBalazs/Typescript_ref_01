@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Pong</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="title">
+      <h1>NEON PONG</h1>
+      <p class="subtitle">Fel/Le nyíl = bal ütő mozgatása • P = szünet, R = újraindítás</p>
+    </header>
+
+    <main class="stage">
+      <div class="hud">
+        <div class="score">
+          <span id="pScore">0</span>
+          <span class="divider">:</span>
+          <span id="cScore">0</span>
+        </div>
+
+        <div class="hud-actions">
+          <button id="difficultyBtn" class="hud-btn" title="Nehézség">Nehézség</button>
+          <button id="soundBtn" class="hud-btn" title="Hang váltása" aria-pressed="true">🔊</button>
+        </div>
+      </div>
+
+      <canvas id="game-canvas" width="900" height="540"></canvas>
+<div class="hint">
+  Tippek:
+  <kbd>P</kbd> szünet
+  <span class="dot">•</span>
+  <kbd>R</kbd> újraindítás
+</div>
+
+    </main>
+  </div>
+
+  <!-- Háttérzene (helyezz el egy bgm.mp3 fájlt a /src mappában; build után a /dist-ben lesz) -->
+  <audio id="bgm" src="bgm.mp3" preload="auto" loop></audio>
+
+  <!-- Nehézségi szint választó modal -->
+  <div id="difficultyModal" class="modal">
+    <div class="modal-card">
+      <h2>Válassz nehézséget</h2>
+      <div class="options">
+        <button data-level="easy" class="opt">
+          <div class="ball ball-easy"></div>
+          <span>Kezdő</span>
+          <small>lassabb AI, lassú labda</small>
+        </button>
+        <button data-level="normal" class="opt">
+          <div class="ball ball-normal"></div>
+          <span>Normál</span>
+          <small>kiegyensúlyozott</small>
+        </button>
+        <button data-level="hard" class="opt">
+          <div class="ball ball-hard"></div>
+          <span>Haladó</span>
+          <small>gyors AI és labda</small>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
