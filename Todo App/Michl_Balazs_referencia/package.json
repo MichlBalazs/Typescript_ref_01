@@ -1,0 +1,23 @@
+{
+  "name": "ts-todo-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript Todo API (Express). Frontend külön a ./todo-ui mappában.",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev:server": "nodemon --watch src --ext ts --exec \"ts-node src/server.ts\""
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2",
+    "nodemon": "^3.0.0",
+    "@types/node": "^20.11.0",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17"
+  }
+}
